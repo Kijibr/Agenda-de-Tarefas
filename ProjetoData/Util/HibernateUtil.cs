@@ -18,7 +18,7 @@ namespace ProjetoData.Util
     /// </summary>
     public class HibernateUtil
     {
-        private static string ConnectionString = "User Id=postgres;Password=28032002eted;host=localhost;Port=5432;Database=AgendaDB;";
+        private static string ConnectionString = "";
         private static ISessionFactory factory; //null
         public static ISessionFactory GetSessionFactory()
         {
