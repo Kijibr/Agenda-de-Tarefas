@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @model  AgendaDeTarefas.Models.UsuarioModelLogin
@@ -26,7 +26,7 @@
         <br /><br />
 
         @Html.LabelFor(u => u.Senha) <br />
-        @Html.TextBoxFor(u => u.Senha)
+        @Html.PasswordFor(u => u.Senha)
         @Html.ValidationMessageFor(u => u.Senha)
         <br /><br />
 

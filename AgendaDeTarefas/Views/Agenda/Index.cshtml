@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <h3>Seja bem vindo á Agenda de Tarefas</h3>
+    <hr />
+
+    <p>
+        Selecione a operação desejada:
+    </p>
+
+    <ul>
+        <li> @Html.ActionLink("Criar Nova Tarefa", "Cadastro") </li>
+        <li> @Html.ActionLink("Consultar Agenda", "Consulta") </li>
+        <li> @Html.ActionLink("Sair do Sistema", "Logout", "Usuario")</li>
+    </ul>
+
+</body>
+</html>

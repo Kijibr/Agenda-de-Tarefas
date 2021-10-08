@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model AgendaDeTarefas.Models.AgendaModelCadastro
+
+    <h3>Cadastrar Nova Tarefa</h3>
+    @Html.ActionLink("Voltar", "Index")
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            @using (Html.BeginForm("CadastrarTarefa", "Agenda", FormMethod.Post))
+            {
+                <div style="color: red;">
+                    @Html.ValidationSummary()
+                </div>
+                @Html.LabelFor(model => model.Titulo)
+                @Html.TextBoxFor(model => model.Titulo,
+                new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(model => model.Descricao)
+                @Html.TextAreaFor(model => model.Descricao,
+                new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(model => model.DataHoraInicio)
+                @Html.TextBoxFor(model => model.DataHoraInicio,
+                new { @class = "form-control", @type = "datetime-local" })
+                <br />
+                @Html.LabelFor(model => model.DataHoraFim)
+                @Html.TextBoxFor(model => model.DataHoraFim,
+                new { @class = "form-control", @type = "datetime-local" })
+                <br />
+                @Html.LabelFor(model => model.IdCategoria)
+                @Html.DropDownListFor(model => model.IdCategoria, new SelectList(
+                new[]
+                    {
+                    new {Value = 2, Text = "Teste Categoria 2"},
+                    new {Value = 1 , Text = "Teste Categoria 1"},
+                    },
+                    "Value",
+                    "Text"
+                ), new { @class = "form-control " })
+                <br />
+                <input type="submit" value="Cadastrar Tarefa"
+                       class="btn btn-success btn-block" />
+                <hr />
+                @ViewBag.Mensagem
+            }
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"</script>
